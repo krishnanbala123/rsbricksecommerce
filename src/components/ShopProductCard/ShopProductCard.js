@@ -86,6 +86,7 @@ import { useWishlist } from "@/context/WishlistContext";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import "./shopProductCard.css";
+import Image from "next/image";
 
 export default function ShopProductCard({ product }) {
   const { addToCart, openCart } = useCart();
@@ -160,7 +161,7 @@ export default function ShopProductCard({ product }) {
       </button>
 
       {/* 🖼 PRODUCT IMAGE */}
-      <img
+      <Image
         src={product.image?.url || "/no-image.png"}
         alt={product.name}
         className="product-image"
