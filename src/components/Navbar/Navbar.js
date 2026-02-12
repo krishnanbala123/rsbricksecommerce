@@ -239,7 +239,7 @@ export default function Navbar() {
                 onClick={() => setProfileOpen(!profileOpen)}
               >
                 {user.photoURL ? (
-                  <img
+                  <Image
                     src={user.photoURL}
                     alt="profile"
                     referrerPolicy="no-referrer"
