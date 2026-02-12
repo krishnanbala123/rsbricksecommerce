@@ -1,0 +1,278 @@
+/* ================= BASE ================= */
+.navbar {
+  height: 64px;
+  background: #fff;
+  border-bottom: 2px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  position: sticky;
+}
+
+.navbar-inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+
+  /* 🔥 GRID – NO ALIGNMENT BUGS */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+/* ================= LEFT ================= */
+.navbar-left {
+  justify-self: start;
+}
+
+/* ================= CENTER (DESKTOP LINKS) ================= */
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+.navbar-center.active {
+  background: #eeeff0;  /* subtle grey */
+}
+
+.navbar-center a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+/* ================= RIGHT ================= */
+.navbar-right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ================= CART ================= */
+.cart-icon {
+  position: relative;
+  font-size: 20px;
+  text-decoration: none;
+  color: #222;
+  border: none;
+  background: none;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* ================= PROFILE ================= */
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DROPDOWN */
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 42px;
+  width: 170px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-link {
+  display: block;
+  padding: 8px 0;
+  text-decoration: none;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 8px;
+}
+
+.profile-dropdown button {
+  width: 100%;
+  padding: 8px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= TOGGLE ================= */
+.nav-toggle {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  /* hide desktop links */
+  .navbar-center {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    display: none;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .navbar-center.active {
+    display: flex;
+  }
+
+  .navbar-center a {
+    padding: 14px 16px;
+    border-top: 1px solid #eee;
+  }
+
+  /* hide cart in navbar */
+  /* .cart-icon {
+    display: none;
+  } */
+
+  /* show toggle */
+  .nav-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-center {
+    position: absolute;
+    top: 60px; /* navbar height */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+    display: none;
+  }
+
+  .navbar-center.active {
+    display: flex;
+  }
+}
+.profile-link {
+  display: block;
+  padding: 8px 0;
+  text-decoration: none;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.profile-link:last-of-type {
+  border-bottom: none;
+}
+
+.profile-dropdown button {
+  margin-top: 8px;
+}
+/* ❤️ Wishlist icon */
+.wishlist-icon {
+  position: relative;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.wishlist-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+.nav-wishlist {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-heart {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #111827;
+  stroke-width: 2;
+}
+
+.wishlist-dot {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 999px;
+}
+.cart-icon {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* DARK CART ICON */
+.nav-cart {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #111827;   /* dark black */
+  stroke-width: 2;
+  transition: stroke 0.2s ease, transform 0.2s ease;
+}
+
+/* hover effect */
+.cart-icon:hover .nav-cart {
+  stroke: #000;
+  transform: scale(1.05);
+}
+
+/* BADGE */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 999px;
+}

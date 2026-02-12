@@ -1,0 +1,98 @@
+.order-success-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  padding: 20px;
+}
+
+.success-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 36px 28px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.5s ease;
+}
+
+/* CHECK ICON */
+.success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  background: #22c55e;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TEXT */
+.success-card h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.success-text {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* ORDER ID */
+.order-id-box {
+  background: #f3f4f6;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+}
+
+.order-id-box span {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.order-id-box strong {
+  font-size: 15px;
+  color: #111827;
+}
+
+/* BUTTONS */
+.success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.success-actions button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  background: #2563eb;
+  color: #fff;
+}
+
+.success-actions button.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

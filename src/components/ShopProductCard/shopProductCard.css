@@ -1,0 +1,177 @@
+/* ================= CARD ================= */
+.shop-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shop-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.shop-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: #f4f4f4;
+}
+
+/* BODY */
+.shop-card-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.shop-card-body h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: -10px;
+}
+
+.product-type {
+  font-size: 20px;
+  color: black;
+font-weight: 600;
+  text-transform: capitalize;
+}
+
+.desc {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.45;
+  flex-grow: 1;
+  margin-bottom: -25px;
+}
+
+/* PRICE + STATUS */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.status {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+.status.in-stock {
+  background: #e6f6ed;
+  color: #137333;
+}
+
+.status.out-of-stock {
+  background: #fdecea;
+  color: #b3261e;
+}
+
+/* ================= ACTION ROW ================= */
+.action-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+/* ADD TO CART */
+.add-cart-btn {
+  flex: 1;
+  padding: 9px;
+  background: #111;
+  /* border: 1px solid #ddd; */
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s ease;
+  color: white;
+  border: none;
+}
+
+.add-cart-btn:hover {
+  background: #313131;
+}
+
+/* BUY NOW */
+.buy-btn {
+  flex: 1;
+  padding: 9px;
+  /* background: #000; */
+   background: #f97316;
+  color: #fff;
+  /* border: 1px solid #000; */
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s ease;
+  border: none;
+}
+
+.buy-btn:hover {
+  background: #f6812e;
+}
+
+/* DISABLED */
+.add-cart-btn:disabled,
+.buy-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.shop-card {
+  position: relative;
+}
+
+/* HEART BUTTON */
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* HEART ICON */
+.heart-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #ef4444;   /* red border */
+  stroke-width: 2;
+  transition: all 0.25s ease;
+}
+
+/* FILLED HEART */
+.heart-icon.filled {
+  fill: #ef4444;     /* red fill */
+  stroke: #ef4444;
+  transform: scale(1.1);
+}
+
+/* HOVER EFFECT */
+.wishlist-btn:hover .heart-icon {
+  transform: scale(1.15);
+}
+

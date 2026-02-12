@@ -1,0 +1,36 @@
+.shop-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 16px;
+}
+
+.shop-title {
+  margin-bottom: 24px;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 🔥 4 CARDS */
+  gap: 24px;
+}
+
+/* LAPTOP / SMALL DESKTOP */
+@media (max-width: 1200px) {
+  .shop-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+}

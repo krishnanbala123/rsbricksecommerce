@@ -1,0 +1,668 @@
+/* =========================
+   PAGE WRAPPER
+========================= */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: calc(100vh - 70px); /* navbar height adjust */
+  background: #f6f7fb;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.profile-sidebar {
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-sidebar button {
+  background: transparent;
+  border: none;
+  padding: 14px 16px;
+  font-size: 15px;
+  text-align: left;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #374151;
+  transition: 0.25s ease;
+}
+
+.profile-sidebar button:hover {
+  background: #f1f5f9;
+}
+
+.profile-sidebar button.active {
+  background: #111827;
+  color: #fff;
+}
+
+/* =========================
+   CONTENT AREA
+========================= */
+/* =========================
+   CONTENT AREA
+========================= */
+.profile-content {
+  padding: 40px;
+
+  display: flex;
+  justify-content: center;   /* ⭐ horizontal center */
+  align-items: flex-start;   /* ⭐ top align (not full vertical center) */
+}
+
+/* =========================
+   PROFILE BOX
+========================= */
+.profile-box {
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;               /* ⭐ important for mobile */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+
+/* ===== PROFILE BOX CONTENT ALIGNMENT ===== */
+.profile-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center image + headings */
+}
+
+.profile-box input,
+.profile-box textarea,
+.profile-box button,
+.profile-details {
+  width: 100%;
+}
+
+.profile-details {
+  margin: 10px 0 20px;
+}
+
+.profile-box button {
+  margin-top: 10px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   AVATAR
+========================= */
+.profile-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 4px solid #e5e7eb;
+}
+
+/* =========================
+   TEXT
+========================= */
+.profile-name {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.profile-email {
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+/* ===== PROFILE DETAILS – NEAT CENTER ALIGN ===== */
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* ⭐ whole block center */
+  gap: 8px;
+  margin: 16px 0 24px;
+}
+
+.profile-details p {
+  margin: 0;
+  font-size: 15px;
+  text-align: center;       /* ⭐ text center */
+  line-height: 1.4;
+  justify-content: center;
+  /* text-align: justify; */
+}
+
+.profile-name,
+.profile-email {
+  text-align: center;
+}
+/* Profile tab content size control */
+.profile-box {
+  max-width: 500px;
+}
+
+/* Orders table full width */
+/* .orders-table {
+  max-width: 100%;
+} */
+
+/* Prevent layout jump */
+.profile-content {
+  align-items: flex-start;
+}
+
+/* =========================
+   INPUTS
+========================= */
+.profile-box input,
+.profile-box textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+.profile-box textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.profile-box button {
+  background: #111827;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.25s;
+}
+
+.profile-box button:hover {
+  background: #1f2937;
+}
+
+/* =========================
+   ORDERS TABLE
+========================= */
+.orders-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 14px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  text-align: left;
+}
+
+.orders-table th {
+  background: #f9fafb;
+}
+
+/* =========================
+   WISHLIST
+========================= */
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 20px;
+}
+
+.wishlist-card {
+  background: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.wishlist-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .profile-layout {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .profile-content {
+    padding: 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-sidebar {
+    flex-direction: row;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .profile-sidebar button {
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .profile-content {
+    padding: 20px;
+  }
+
+  .profile-box {
+    padding: 24px;
+  }
+}
+/* ===== PROFILE AVATAR CAMERA ICON ===== */
+.profile-avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-avatar-camera {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 34px;
+  height: 34px;
+  background: #adb0b8; /* blue like your image */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.profile-avatar-camera:hover {
+  background: #111827;
+}
+/* ================= WISHLIST GRID ================= */
+
+.wishlist-grid {
+  display: grid;
+  gap: 18px;
+}
+
+/* ================= CARD ================= */
+.wishlist-card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform .25s ease;
+}
+
+.wishlist-card:hover {
+  transform: translateY(-4px);
+}
+
+.wishlist-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.wishlist-card h4 {
+  margin: 10px 0 4px;
+  font-size: 16px;
+}
+
+.wishlist-card p {
+  font-weight: 600;
+}
+
+/* ❌ remove button */
+.wishlist-remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================================================= */
+/* 📱 MOBILE */
+@media (max-width: 575px) {
+  .wishlist-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 📱 TABLET */
+@media (min-width: 576px) and (max-width: 991px) {
+  .wishlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* 💻 DESKTOP & LARGE SCREEN */
+@media (min-width: 992px) {
+  .wishlist-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .wishlist-card {
+    min-width: 260px;
+    flex-shrink: 0;
+  }
+
+  /* nice scrollbar */
+  .wishlist-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+  .wishlist-grid::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+}
+.border-path-toast {
+  position: relative;
+  background: #fff;
+  color: #111;
+
+  --b: 3px;
+  --r: 0px;
+  --g: #22c55e;
+
+  border-radius: 0 !important;
+  padding: 14px 18px;
+  min-width: 340px;
+  max-width: 420px;
+
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.border-path-toast::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0 !important;
+  pointer-events: none;
+  padding: var(--b);
+
+  /* 🔥 EXPLICIT POSITIONS — THIS IS THE FIX */
+  background:
+    linear-gradient(var(--g) 0 0) top left     / 0% var(--b) no-repeat,   /* TOP */
+    linear-gradient(var(--g) 0 0) top right    / var(--b) 0% no-repeat,   /* RIGHT */
+    linear-gradient(var(--g) 0 0) bottom right / 0% var(--b) no-repeat,   /* BOTTOM */
+    linear-gradient(var(--g) 0 0) bottom left  / var(--b) 0% no-repeat;   /* LEFT */
+
+  /* cut center, keep only border */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  animation: borderRun 4s linear forwards;
+}
+
+/* 🔥 EXACT PATH CONTROL */
+@keyframes borderRun {
+  /* start at TOP-LEFT */
+  0% {
+    background-size:
+      0% var(--b),
+      var(--b) 0%,
+      0% var(--b),
+      var(--b) 0%;
+  }
+
+  /* TOP-LEFT → TOP-RIGHT */
+  25% {
+    background-size:
+      100% var(--b),
+      var(--b) 0%,
+      0% var(--b),
+      var(--b) 0%;
+  }
+
+  /* TOP-RIGHT → BOTTOM-RIGHT */
+  50% {
+    background-size:
+      100% var(--b),
+      var(--b) 100%,
+      0% var(--b),
+      var(--b) 0%;
+  }
+
+  /* BOTTOM-RIGHT → BOTTOM-LEFT */
+  75% {
+    background-size:
+      100% var(--b),
+      var(--b) 100%,
+      100% var(--b),
+      var(--b) 0%;
+  }
+
+  /* BOTTOM-LEFT → TOP-LEFT (finish) */
+  100% {
+    background-size:
+      100% var(--b),
+      var(--b) 100%,
+      100% var(--b),
+      var(--b) 100%;
+  }
+}
+@media (max-width: 480px) {
+  .border-path-toast {
+    width: calc(100vw - 24px);
+    min-width: auto;
+    max-width: none;
+
+    padding: 12px 14px;
+    font-size: 13px;
+
+    --b: 2px;
+    --r: 0px;
+    border-radius: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .border-path-toast {
+    min-width: 280px;
+    max-width: 360px;
+
+    font-size: 13.5px;
+
+    --b: 2.5px;
+    --r: 0px;
+    border-radius: 0 !important;
+  }
+}
+@media (min-width: 1200px) {
+  .border-path-toast {
+    min-width: 380px;
+    max-width: 480px;
+
+    font-size: 15px;
+
+    --b: 3.5px;
+    --r: 0px;
+    border-radius: 0 !important;
+  }
+}
+
+
+
+      /* save failed */
+.border-path-toast1 {
+  position: relative;
+  background: #fff;
+  color: #111;
+
+  --b: 3px;
+  --r: 0px;
+  --c: #f11313;
+
+  border-radius: 0 !important;
+  padding: 14px 18px;
+  min-width: 340px;
+  max-width: 420px;
+
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.border-path-toast1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0 !important;
+  pointer-events: none;
+  padding: var(--b);
+
+  /* 🔥 EXPLICIT POSITIONS — THIS IS THE FIX */
+  background:
+    linear-gradient(var(--c) 0 0) top left     / 0% var(--b) no-repeat,   /* TOP */
+    linear-gradient(var(--c) 0 0) top right    / var(--b) 0% no-repeat,   /* RIGHT */
+    linear-gradient(var(--c) 0 0) bottom right / 0% var(--b) no-repeat,   /* BOTTOM */
+    linear-gradient(var(--c) 0 0) bottom left  / var(--b) 0% no-repeat;   /* LEFT */
+
+  /* cut center, keep only border */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  animation: borderRun 4s linear forwards;
+}
+
+/* 🔥 EXACT PATH CONTROL */
+@keyframes borderRun {
+  /* start at TOP-LEFT */
+  0% {
+    background-size:
+      0% var(--b),
+      var(--b) 0%,
+      0% var(--b),
+      var(--b) 0%;
+  }
+
+  /* TOP-LEFT → TOP-RIGHT */
+  25% {
+    background-size:
+      100% var(--b),
+      var(--b) 0%,
+      0% var(--b),
+      var(--b) 0%;
+  }
+
+  /* TOP-RIGHT → BOTTOM-RIGHT */
+  50% {
+    background-size:
+      100% var(--b),
+      var(--b) 100%,
+      0% var(--b),
+      var(--b) 0%;
+  }
+
+  /* BOTTOM-RIGHT → BOTTOM-LEFT */
+  75% {
+    background-size:
+      100% var(--b),
+      var(--b) 100%,
+      100% var(--b),
+      var(--b) 0%;
+  }
+
+  /* BOTTOM-LEFT → TOP-LEFT (finish) */
+  100% {
+    background-size:
+      100% var(--b),
+      var(--b) 100%,
+      100% var(--b),
+      var(--b) 100%;
+  }
+}
+@media (max-width: 480px) {
+  .border-path-toast1 {
+    width: calc(100vw - 24px);
+    min-width: auto;
+    max-width: none;
+
+    padding: 12px 14px;
+    font-size: 13px;
+
+    --b: 2px;
+    --r: 0px;
+    border-radius: 0 !important;
+  }
+}
+@media (max-width: 768px) {
+  .border-path-toast1 {
+    min-width: 280px;
+    max-width: 360px;
+
+    font-size: 13.5px;
+
+    --b: 2.5px;
+    --r: 0px;
+    border-radius: 0 !important;
+  }
+}
+@media (min-width: 1200px) {
+  .border-path-toast1 {
+    min-width: 380px;
+    max-width: 480px;
+
+    font-size: 15px;
+
+    --b: 3.5px;
+    --r: 0px;
+    border-radius: 0 !important;
+  }
+}
