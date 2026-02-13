@@ -21,7 +21,7 @@ export default function Footer() {
         {/* LEFT – BRAND */}
         <div className="footer-col brand">
           <div className="brand-row center">
-            <img src="/bricks-logo.png" alt="RS Bricks" />
+            <img src="/brickslogo.png" alt="RS Bricks" />
            
           </div>
 
