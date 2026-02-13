@@ -6,7 +6,6 @@ import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
 import { useAuth } from "@/context/AuthContext";
 import "./productDetails.css";
-import Image from "next/image";
 
 function getThumbnailsByType(type, mainImage) {
   switch (type) {
@@ -222,12 +221,12 @@ const thumbnails = getThumbnailsByType(
       </svg>
     </button>
 
-    <Image src={activeImage} alt={product.name} />
+    <img src={activeImage} alt={product.name} />
   </div>
 
   <div className="thumb-row">
     {thumbnails.map((img, i) => (
-      <Image
+      <img
         key={i}
         src={img}
         onClick={() => setActiveImage(img)}

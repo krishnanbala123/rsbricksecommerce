@@ -157,7 +157,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
@@ -179,8 +178,8 @@ export default function Navbar() {
         {/* LOGO */}
         <div className="navbar-left">
           <Link href="/shop">
-            <Image
-              src="/RS logo.png"
+            <img
+              src="/rslogo.png"
               alt="Brand Logo"
               width={140}
               height={65}
@@ -239,7 +238,7 @@ export default function Navbar() {
                 onClick={() => setProfileOpen(!profileOpen)}
               >
                 {user.photoURL ? (
-                  <Image
+                  <img
                     src={user.photoURL}
                     alt="profile"
                     referrerPolicy="no-referrer"

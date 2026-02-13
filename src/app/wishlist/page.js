@@ -84,7 +84,6 @@ import { useWishlist } from "@/context/WishlistContext";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";   // ✅ ADD
 import "./wishlist.css";
-import Image from "next/image";
 
 export default function WishlistPage() {
   const { wishlist, removeFromWishlist } = useWishlist();
@@ -141,7 +140,7 @@ export default function WishlistPage() {
                 {removingId === item.productId ? "..." : "✕"}
               </button>
 
-              <Image
+              <img
                 src={item.image?.url || "/no-image.png"}
                 alt={item.name}
               />

@@ -417,7 +417,6 @@ import { updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";   // ✅ TOAST ADDED
 import "./profile.css";
-import Image from "next/image";
 
 export default function ProfilePage() {
   const { user } = useAuth();
@@ -571,7 +570,7 @@ export default function ProfilePage() {
           <div className="profile-box">
 
             <div className="profile-avatar-wrapper">
-              <Image src={preview} className="profile-avatar" />
+              <img src={preview} className="profile-avatar" />
 
               {editMode && (
                 <div
