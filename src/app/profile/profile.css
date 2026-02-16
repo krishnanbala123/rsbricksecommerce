@@ -4,8 +4,12 @@
 .profile-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
-  min-height: calc(100vh - 70px); /* navbar height adjust */
   background: #f6f7fb;
+}
+@media(min-width:641px){
+  .profile-layout{
+    min-height: calc(100vh - 70px); /* navbar height adjust */
+  }
 }
 
 /* =========================
@@ -19,6 +23,16 @@
   flex-direction: column;
   gap: 12px;
 }
+
+.selva-pro{
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 
 .profile-sidebar button {
   background: transparent;
@@ -161,8 +175,11 @@
 /* Prevent layout jump */
 .profile-content {
   align-items: flex-start;
+  overflow-x: auto;
 }
-
+.orders-wrapper{
+  overflow-x: auto;
+}
 /* =========================
    INPUTS
 ========================= */
@@ -202,7 +219,7 @@
 /* =========================
    ORDERS TABLE
 ========================= */
-.orders-table {
+/* .orders-table {
   width: 100%;
   background: #fff;
   border-radius: 14px;
@@ -221,7 +238,7 @@
 
 .orders-table th {
   background: #f9fafb;
-}
+} */
 
 /* =========================
    WISHLIST
@@ -270,7 +287,7 @@
 
   .profile-sidebar {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
   }
@@ -278,6 +295,7 @@
   .profile-sidebar button {
     text-align: center;
     padding: 10px 12px;
+    height: 40px; 
     font-size: 14px;
   }
 
@@ -369,7 +387,7 @@
 
 /* ================================================= */
 /* 📱 MOBILE */
-@media (max-width: 575px) {
+@media (max-width: 768px) {
   .wishlist-grid {
     grid-template-columns: 1fr;
   }
@@ -378,7 +396,7 @@
 /* 📱 TABLET */
 @media (min-width: 576px) and (max-width: 991px) {
   .wishlist-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
 }

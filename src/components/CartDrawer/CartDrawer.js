@@ -231,7 +231,7 @@ export default function CartDrawer() {
             <div className="cart-items">
               {cartItems.map((item) => {
                 const qty = Number(item.quantity);
-                const isValid = qty >= 500;
+                const isValid = qty >= 500  ;
 
                 return (
                   <div key={item._id} className="cart-item-ui">

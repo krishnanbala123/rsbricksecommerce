@@ -93,6 +93,7 @@ export async function POST(req) {
     const {
       name,
       phone,
+      email,
       deliveryAddress,
       location,
       items,
@@ -103,6 +104,7 @@ export async function POST(req) {
     if (
       !name ||
       !phone ||
+      !email ||
       !deliveryAddress ||
       !location?.lat ||
       !location?.lng ||
@@ -132,6 +134,7 @@ export async function POST(req) {
       orderId: "ORD-" + Date.now(),
       name,
       phone,
+      email,
       deliveryAddress,
       location,
       items,

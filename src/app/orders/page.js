@@ -339,7 +339,7 @@ export default function OrdersPage() {
     }
 
     if (remainingAmount < 0) {
-      toast.error("Paid amount cannot exceed total amount 💸",
+      toast.error("Paid amount cannot exceed total amount",
              {
     className: `border-path-toast1 run-${Date.now()}`, // 👈 key trick
     duration: 4000,
