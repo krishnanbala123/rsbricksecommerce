@@ -1,4 +1,4 @@
-.auth-container {
+/* .auth-container {
   min-height: calc(100vh - 70px);
   display: flex;
   justify-content: center;
@@ -63,7 +63,262 @@
 .google-btn:hover {
   background: #f5f5f5;
   color: #000;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ================= PAGE ================= */
+
+.login-page{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:480px 1fr;
+  background:#f3f4f8;
+  overflow:hidden;
+  font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
+
+/* ================= LEFT PANEL ================= */
+
+.login-left{
+  position:relative;
+  background:linear-gradient(140deg,#eef2ff,#dbeafe,#bfdbfe);
+  color:#1e293b;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 40px;
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+  overflow:hidden;
+}
+
+/* soft glow background */
+.login-left::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  background:radial-gradient(circle,#ffffff70,transparent 70%);
+  top:-120px;
+  left:-120px;
+}
+
+/* content wrapper */
+.login-left-inner{
+  text-align:center;
+  max-width:320px;
+  position:relative;
+  z-index:2;
+}
+
+/* ================= CIRCLE IMAGE ================= */
+
+.circle-image{
+  width:190px;
+  height:190px;
+  margin:0 auto 25px auto;
+  border-radius:50%;
+  overflow:hidden;
+  background:#fff;
+  padding:6px;
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.15),
+    inset 0 0 0 6px #ffffff;
+  animation:floatSoft 6s ease-in-out infinite;
+}
+
+.circle-image img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center 55%;
+}
+
+/* floating animation */
+@keyframes floatSoft{
+  0%{ transform:translateY(0);}
+  50%{ transform:translateY(-8px);}
+  100%{ transform:translateY(0);}
+}
+
+/* heading */
+.login-left h1{
+  font-size:26px;
+  font-weight:600;
+  letter-spacing:.3px;
+  margin-bottom:8px;
+  color:#0f172a;
+}
+
+/* description */
+.login-left p{
+  font-size:14.5px;
+  font-weight:400;
+  line-height:1.7;
+  color:#475569;
+}
+
+
+/* ================= RIGHT SIDE ================= */
+
+.login-right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/* card */
+.login-card{
+  width:360px;
+  background:#ffffff;
+  padding:40px 34px;
+  border-radius:18px;
+  box-shadow:0 30px 70px rgba(0,0,0,.08);
+  text-align:center;
+  animation:cardEnter .5s ease;
+}
+
+@keyframes cardEnter{
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.97);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.login-card h2{
+  font-size:26px;
+  margin-bottom:6px;
+}
+
+.sub{
+  font-size:14px;
+  color:#6b7280;
+  margin-bottom:26px;
+}
+
+/* ================= GOOGLE BUTTON ================= */
+
+.google-btn{
+  width:100%;
+  padding:13px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  font-weight:500;
+  font-size:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  transition:.25s;
+  box-shadow:0 6px 14px rgba(0,0,0,.05);
+  cursor:pointer;
+}
+
+.google-btn::before{
+  content:"";
+  width:18px;
+  height:18px;
+  background:url("https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg");
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+.google-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 28px rgba(0,0,0,.08);
+}
+
+.google-btn:active{
+  transform:scale(.97);
+}
+
+.google-btn:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:900px){
+
+  .login-page{
+    grid-template-columns:1fr;
+  }
+
+  .login-left{
+    clip-path:none;
+    height:260px;
+  }
+
+  .circle-image{
+    width:150px;
+    height:150px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+/* MOBILE VIEW */
+@media(max-width:500px){
+
+  .login-page{
+    grid-template-columns:1fr;
+    background:#f3f4f8;
+  }
+
+  /* top banner */
+  .login-left{
+    display:flex;
+    clip-path:none;
+    height:240px;
+    padding:25px 18px;
+    border-bottom-left-radius:26px;
+    border-bottom-right-radius:26px;
+  }
+
+  .login-left-inner{
+    max-width:none;
+  }
+
+  /* smaller circle image */
+  .circle-image{
+    width:120px;
+    height:120px;
+    margin-bottom:14px;
+  }
+
+  .login-left h1{
+    font-size:20px;
+  }
+
+  .login-left p{
+    font-size:12px;
+  }
+
+  /* login section */
+  .login-right{
+    align-items:flex-start;
+    padding:24px 16px;
+  }
+
+  .login-card{
+    width:100%;
+    max-width:360px;
+    padding:28px 20px;
+    border-radius:16px;
+    margin-top:-40px; /* overlap effect */
+  }
+}
+
+
+
+
 .border-path-toast {
   position: relative;
   background: #fff;
@@ -90,14 +345,13 @@
   pointer-events: none;
   padding: var(--b);
 
-  /* 🔥 EXPLICIT POSITIONS — THIS IS THE FIX */
+ 
   background:
     linear-gradient(var(--g) 0 0) top left     / 0% var(--b) no-repeat,   /* TOP */
     linear-gradient(var(--g) 0 0) top right    / var(--b) 0% no-repeat,   /* RIGHT */
     linear-gradient(var(--g) 0 0) bottom right / 0% var(--b) no-repeat,   /* BOTTOM */
     linear-gradient(var(--g) 0 0) bottom left  / var(--b) 0% no-repeat;   /* LEFT */
 
-  /* cut center, keep only border */
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -107,9 +361,9 @@
   animation: borderRun 4s linear forwards;
 }
 
-/* 🔥 EXACT PATH CONTROL */
+
 @keyframes borderRun {
-  /* start at TOP-LEFT */
+  
   0% {
     background-size:
       0% var(--b),
@@ -118,7 +372,6 @@
       var(--b) 0%;
   }
 
-  /* TOP-LEFT → TOP-RIGHT */
   25% {
     background-size:
       100% var(--b),
@@ -127,7 +380,7 @@
       var(--b) 0%;
   }
 
-  /* TOP-RIGHT → BOTTOM-RIGHT */
+  
   50% {
     background-size:
       100% var(--b),
@@ -136,7 +389,7 @@
       var(--b) 0%;
   }
 
-  /* BOTTOM-RIGHT → BOTTOM-LEFT */
+
   75% {
     background-size:
       100% var(--b),
@@ -145,7 +398,6 @@
       var(--b) 0%;
   }
 
-  /* BOTTOM-LEFT → TOP-LEFT (finish) */
   100% {
     background-size:
       100% var(--b),
@@ -195,7 +447,6 @@
 
 
 
-      /* save failed */
 .border-path-toast1 {
   position: relative;
   background: #fff;
@@ -222,14 +473,13 @@
   pointer-events: none;
   padding: var(--b);
 
-  /* 🔥 EXPLICIT POSITIONS — THIS IS THE FIX */
+ 
   background:
     linear-gradient(var(--c) 0 0) top left     / 0% var(--b) no-repeat,   /* TOP */
     linear-gradient(var(--c) 0 0) top right    / var(--b) 0% no-repeat,   /* RIGHT */
     linear-gradient(var(--c) 0 0) bottom right / 0% var(--b) no-repeat,   /* BOTTOM */
     linear-gradient(var(--c) 0 0) bottom left  / var(--b) 0% no-repeat;   /* LEFT */
 
-  /* cut center, keep only border */
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -239,9 +489,9 @@
   animation: borderRun 4s linear forwards;
 }
 
-/* 🔥 EXACT PATH CONTROL */
+
 @keyframes borderRun {
-  /* start at TOP-LEFT */
+ 
   0% {
     background-size:
       0% var(--b),
@@ -250,7 +500,7 @@
       var(--b) 0%;
   }
 
-  /* TOP-LEFT → TOP-RIGHT */
+ 
   25% {
     background-size:
       100% var(--b),
@@ -259,7 +509,7 @@
       var(--b) 0%;
   }
 
-  /* TOP-RIGHT → BOTTOM-RIGHT */
+ 
   50% {
     background-size:
       100% var(--b),
@@ -268,7 +518,7 @@
       var(--b) 0%;
   }
 
-  /* BOTTOM-RIGHT → BOTTOM-LEFT */
+ 
   75% {
     background-size:
       100% var(--b),
@@ -277,7 +527,7 @@
       var(--b) 0%;
   }
 
-  /* BOTTOM-LEFT → TOP-LEFT (finish) */
+ 
   100% {
     background-size:
       100% var(--b),

@@ -224,12 +224,12 @@
   }
 }
 
-/* =========================
+/* =========================  
    MOBILE
 ========================= */
 @media (max-width: 600px) {
   .product-details-page {
-    padding: 14px;
+    padding: 7px;
   }
 
   .thumb-row img {
@@ -271,6 +271,7 @@
   font-size: 28px;
   font-weight: 700;
   line-height: 1.3;
+  text-transform: capitalize;
 }
 .product-title1 {
   font-size: 20px;
@@ -309,3 +310,29 @@
     font-size: 16px;
   }
 }
+
+
+
+/* ===== DETAILS SKELETON ===== */
+
+.skeleton{background:#e5e7eb;border-radius:10px;}
+.thumb{width:70px;height:70px;border-radius:8px;}
+.title{height:28px;width:70%;margin:10px 0;}
+.rating{height:18px;width:120px;margin:10px 0;}
+.price{height:26px;width:120px;margin:15px 0;}
+.type{height:20px;width:150px;margin:10px 0;}
+.para{height:14px;width:100%;margin:8px 0;}
+.para.small{width:60%;}
+.status{height:24px;width:100px;margin:15px 0;}
+.btn{height:44px;flex:1;border-radius:8px;}
+
+.shimmer{position:relative;overflow:hidden;}
+.shimmer::after{
+content:"";
+position:absolute;
+top:0;left:-150%;
+height:100%;width:150%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);
+animation:shimmer 1.2s infinite;
+}
+@keyframes shimmer{100%{left:100%;}}

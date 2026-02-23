@@ -5,6 +5,7 @@ import { WishlistProvider } from "@/context/WishlistContext";
 import { AuthProvider } from "@/context/AuthContext";
 import Footer from "@/components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
+import "./globals.css"
 
 export default function RootLayout({ children }) {
   return (

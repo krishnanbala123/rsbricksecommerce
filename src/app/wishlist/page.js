@@ -68,8 +68,8 @@ export default function WishlistPage() {
               />
 
               <div className="wishlist-info">
-                <h4>{item.name}</h4>
-                <p className="type">{item.type}</p>
+              <h4>{item.type}</h4>
+                <p className="type">{item.name}</p>
                 <strong>₹ {item.price}</strong>
               </div>
 

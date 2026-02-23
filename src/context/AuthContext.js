@@ -129,7 +129,7 @@ export function AuthProvider({ children }) {
               uid: currentUser.uid,
               name: currentUser.displayName || "",
               email: currentUser.email || "",
-              phone: currentUser.phoneNumber || "",
+              // phone: currentUser.phoneNumber || "",
               photoURL: currentUser.photoURL || "",
             }),
           });

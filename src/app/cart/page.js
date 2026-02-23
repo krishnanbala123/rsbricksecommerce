@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useCart } from "@/context/CartContext";
@@ -12,7 +11,7 @@ export default function CartPage() {
     removeFromCart(id);
     toast.success("Item removed from cart",
        {
-    className: `border-path-toast run-${Date.now()}`, // 👈 key trick
+    className: `border-path-toast run-${Date.now()}`, 
     duration: 4000,
   }
     );

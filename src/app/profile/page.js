@@ -16,6 +16,9 @@ export default function ProfilePage() {
   const { user } = useAuth();
   const { wishlist } = useWishlist();
 
+  const [saving, setSaving] = useState(false);
+
+
   const [tab, setTab] = useState("profile");
   const [orders, setOrders] = useState([]);
   const [editMode, setEditMode] = useState(false);
@@ -73,11 +76,22 @@ export default function ProfilePage() {
 console.log("orders", orders)
 
 
+// for showing inside input
+const toInputDate = (dob) => {
+  if (!dob) return "";
+  const [day, month, year] = dob.split("-");
+  return `${year}-${month}-${day}`;
+};
+
+
   /* ===============================
      SAVE PROFILE
   =============================== */
   const saveProfile = async () => {
     try {
+
+       setSaving(true);  // 🔥 START LOADING
+
       let photoURL = preview;
 
       if (photo) {
@@ -124,6 +138,8 @@ console.log("orders", orders)
         className: `border-path-toast1 run-${Date.now()}`,
         duration: 4000,
       });
+    } finally {
+      setSaving(false); 
     }
   };
 
@@ -228,12 +244,26 @@ console.log("orders", orders)
                   }
                 />
 
-                <input
+                {/* <input
                   type="date"
                   value={form.dob}
                   onChange={(e) =>
                     setForm({ ...form, dob: e.target.value })
                   }
+                /> */}
+
+                <input
+                  type="date"
+                  value={toInputDate(form.dob)}
+                  onChange={(e) => {
+                    const value = e.target.value; // YYYY-MM-DD
+                    if (!value) return setForm({ ...form, dob: "" });
+
+                    const [year, month, day] = value.split("-");
+                    const formatted = `${day}-${month}-${year}`; // DD-MM-YYYY
+
+                    setForm({ ...form, dob: formatted });
+                  }}
                 />
 
                 <textarea
@@ -244,11 +274,20 @@ console.log("orders", orders)
                   }
                 />
 
-                <button onClick={saveProfile}>
+                {/* <button onClick={saveProfile}>
                   Save Changes
+                </button> */}
+                <button onClick={saveProfile} disabled={saving}>
+                  {saving ? "Saving Changes..." : "Save Changes"}
                 </button>
               </>
             )}
+            {saving && (
+            <div className="profile-loader">
+              <div className="profile-spinner"></div>
+              <p>Updating Profile...</p>
+            </div>
+          )}
           </div>
         )}
 
@@ -332,14 +371,30 @@ console.log("orders", orders)
                 qty: totalQty,
                 total: o.totalAmount,
                 status: o.paymentStatus,
+                paidamount: o. paidAmount,
+                remainingamount: o.remainingAmount,
+                date: o.createdAt,
               };
             })
           }
           columns={[
-            {
-              field: "orderId",
-              headerName: "Order ID",
-              width: 150,
+            // {
+            //   field: "orderId",
+            //   headerName: "Order ID",
+            //   width: 150,
+            // },
+              {
+              field: "date",
+              headerName: "Order Date",
+              width: 180,
+              renderCell: (params) => {
+                const d = new Date(params.value);
+                return d.toLocaleDateString("en-IN", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                });
+              },
             },
             {
               field: "type",
@@ -354,6 +409,18 @@ console.log("orders", orders)
             {
               field: "total",
               headerName: "Total",
+              width: 150,
+              renderCell: (params) => `₹ ${params.value}`,
+            },
+              {
+              field: "paidamount",
+              headerName: "PaidAmount",
+              width: 150,
+              renderCell: (params) => `₹ ${params.value}`,
+            },
+              {
+              field: "remainingamount",
+              headerName: "remainingAmount",
               width: 150,
               renderCell: (params) => `₹ ${params.value}`,
             },
